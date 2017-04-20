@@ -7,6 +7,11 @@ $main-white: #FFFFFF;
 $main-grey: #828282;
 $main-red: #d9534f;
 
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
 * {
   font-family: $main-font;
 }
@@ -35,6 +40,7 @@ button {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+  margin: 20px; 
 
   iframe {
     transition: 200ms all ease;
@@ -52,5 +58,26 @@ button {
       transform: translateY(-2%);
       box-shadow: 0 29px 25px -32px lighten($main-grey, 1%);
     }
+  }
+}
+
+.music-container {
+  padding-top: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 25px;
+  background: #4745D1;
+
+  input {
+    margin: 0;
   }
 }
