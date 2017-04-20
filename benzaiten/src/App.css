@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates");
+* {
+  font-family: "Montserrat"; }
+
+body {
+  background: #000000; }
+
+button {
+  background: #1ED760;
+  text-transform: uppercase;
+  font-weight: 800;
+  border: none;
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 10px 50px;
+  border-radius: 20px; }
+
+button:focus {
+  outline: none; }
+
+.playlist {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center; }
+
+.playlist iframe {
+  transition: 200ms all ease;
+  border-radius: 10px;
+  box-shadow: 1px 1px 12px #828282;
+  border: none; }
+
+.playlist button {
+  margin: 25px 0;
+  order: 1; }
+
+.playlist button:active + iframe {
+  transform: translateY(-2%);
+  box-shadow: 0 29px 25px -32px #858585; }
