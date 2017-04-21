@@ -29,9 +29,24 @@ button {
   display: inline-block;
   padding: 10px 50px;
   border-radius: 20px;
+  transition: 400ms all ease;
+  position: relative;
 
   &:focus {
     outline: none;
+  }
+
+  &:disabled {
+    background: $main-red;
+    cursor: not-allowed;
+    &:after {
+      content: "You have no playlists added!";
+      font-size: .8em;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      width: 100%;
+    }
   }
 }
 
@@ -90,4 +105,19 @@ nav {
 
 .remove {
   background: $main-red;
+}
+
+.favourites {
+  background: #03002e;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  transition: 200ms all ease-in-out;
+  transform: translateX(100%);
+}
+
+.toggled {
+  transform: translateX(0);
 }

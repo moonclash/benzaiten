@@ -8,10 +8,12 @@ class Music extends Component {
     super();
     this.updateSearch = this.updateSearch.bind(this);
     this.favouritesManager = this.favouritesManager.bind(this);
+    this.showFavourites = this.showFavourites.bind(this);
     this.state = {
       userSearch: 'eminem',
       userResults: [],
-      userFavourites: []
+      userFavourites: [],
+      favouritesToggled: false
     }
   }
 
@@ -53,12 +55,18 @@ class Music extends Component {
     localStorage.setItem('favourites',JSON.stringify(userFavourites));
   }
 
+  showFavourites() {
+    let { favouritesToggled } = this.state;
+    favouritesToggled = !favouritesToggled;
+    this.setState({favouritesToggled});
+  }
+
   render() {
-    const { userResults, userFavourites } = this.state;
+    const { userResults, userFavourites, favouritesToggled } = this.state;
     return (<div className='music-wrap'>
              <nav>
                 <input type="text" onChange={this.updateSearch}/>
-                <button onClick={this.showFavourites}>favourites</button>
+                <button disabled={userFavourites.length <= 0} onClick={this.showFavourites}>favourites</button>
              </nav>
               <div className="music-container">
              {userResults.map((playlist,i) => {
@@ -69,6 +77,17 @@ class Music extends Component {
              key={i} 
              onClick={this.favouritesManager}/>
              })}
+             </div>
+             <div className={`favourites ${favouritesToggled? 'toggled' : ''}`}>
+               {userFavourites.map((favourite, i) => {
+                return <Playlist 
+                uri={favourite} 
+                key={i} 
+                height={500}
+                text={userFavourites.indexOf(favourite) > -1? 'remove' : 'add'}
+                onClick={this.favouritesManager}
+                />
+               })}
              </div>
           </div>);
   }

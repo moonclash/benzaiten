@@ -17,10 +17,24 @@ button {
   color: #FFFFFF;
   display: inline-block;
   padding: 10px 50px;
-  border-radius: 20px; }
+  border-radius: 20px;
+  transition: 400ms all ease;
+  position: relative; }
 
 button:focus {
   outline: none; }
+
+button:disabled {
+  background: #d9534f;
+  cursor: not-allowed; }
+
+button:disabled:after {
+  content: "You have no playlists added!";
+  font-size: .8em;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  width: 100%; }
 
 .playlist {
   display: flex;
@@ -66,3 +80,16 @@ nav input {
 
 .remove {
   background: #d9534f; }
+
+.favourites {
+  background: #03002e;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  transition: 200ms all ease-in-out;
+  transform: translateX(100%); }
+
+.toggled {
+  transform: translateX(0); }
