@@ -27,13 +27,13 @@ button:focus {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+  flex: 1 0 30%;
   margin: 20px; }
 
 .playlist iframe {
   transition: 200ms all ease;
-  border-radius: 10px;
-  box-shadow: 1px 1px 12px #828282;
-  border: none; }
+  border: none;
+  width: 100%; }
 
 .playlist button {
   margin: 25px 0;
@@ -60,3 +60,9 @@ nav {
 
 nav input {
   margin: 0; }
+
+.add {
+  background: #1ED760; }
+
+.remove {
+  background: #d9534f; }

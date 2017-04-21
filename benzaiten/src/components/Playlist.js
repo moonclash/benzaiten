@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Playlist(props) {
   return(<div className='playlist'>
-            <button onClick={()=>{props.onClick(props.uri)}}>{props.text}</button>
+            <button className={props.text} onClick={()=>{props.onClick(props.uri)}}>{props.text}</button>
             <iframe src={`https://open.spotify.com/embed?uri=${props.uri}`}
             width={props.width} 
             height={props.height}>

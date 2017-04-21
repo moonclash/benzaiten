@@ -28,6 +28,7 @@ class Music extends Component {
 
   componentDidMount() {
     this.updateQuery();
+    this.setState({userFavourites: JSON.parse(localStorage.getItem('favourites')) || []});
   }
 
   componentDidUpdate() {
@@ -48,10 +49,12 @@ class Music extends Component {
       userFavourites.splice(userFavourites.indexOf(uri),1);
       this.setState({ userFavourites });
     }
+
+    localStorage.setItem('favourites',JSON.stringify(userFavourites));
   }
 
   render() {
-    const { userResults } = this.state;
+    const { userResults, userFavourites } = this.state;
     return (<div className='music-wrap'>
              <nav>
                 <input type="text" onChange={this.updateSearch}/>
@@ -62,8 +65,7 @@ class Music extends Component {
              return <Playlist 
              uri={playlist.uri} 
              height={500} 
-             width={300} 
-             text='submit'
+             text={userFavourites.indexOf(playlist.uri) > -1? 'remove' : 'add'}
              key={i} 
              onClick={this.favouritesManager}/>
              })}

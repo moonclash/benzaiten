@@ -40,13 +40,15 @@ button {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+  flex: 1 0 30%;
   margin: 20px; 
 
   iframe {
     transition: 200ms all ease;
-    border-radius: 10px;
-    box-shadow: 1px 1px 12px $main-grey;
+    
+   
     border: none;
+    width: 100%;
     
   }
 
@@ -80,4 +82,12 @@ nav {
   input {
     margin: 0;
   }
+}
+
+.add {
+  background: $main-green;
+}
+
+.remove {
+  background: $main-red;
 }
