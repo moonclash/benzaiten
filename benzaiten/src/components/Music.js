@@ -79,6 +79,7 @@ class Music extends Component {
              })}
              </div>
              <div className={`favourites ${favouritesToggled? 'toggled' : ''}`}>
+             <button onClick={this.showFavourites}>close</button>
                {userFavourites.map((favourite, i) => {
                 return <Playlist 
                 uri={favourite} 
