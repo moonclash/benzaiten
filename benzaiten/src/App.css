@@ -20,21 +20,18 @@ button {
   border-radius: 20px;
   transition: 400ms all ease;
   position: relative; }
-
-button:focus {
-  outline: none; }
-
-button:disabled {
-  background: #d9534f;
-  cursor: not-allowed; }
-
-button:disabled:after {
-  content: "You have no playlists added!";
-  font-size: .8em;
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  width: 100%; }
+  button:focus {
+    outline: none; }
+  button:disabled {
+    background: #d9534f;
+    cursor: not-allowed; }
+    button:disabled:after {
+      content: "You have no playlists added!";
+      font-size: .8em;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      width: 100%; }
 
 .playlist {
   display: flex;
@@ -43,29 +40,25 @@ button:disabled:after {
   justify-content: center;
   flex: 1 0 30%;
   margin: 20px; }
-
-.playlist iframe {
-  transition: 200ms all ease;
-  border: none;
-  width: 100%; }
-
-.playlist button {
-  margin: 25px 0;
-  order: 1; }
-
-.playlist button:active + iframe {
-  transform: translateY(-2%);
-  box-shadow: 0 29px 25px -32px #858585; }
+  .playlist iframe {
+    transition: 200ms all ease;
+    border: none;
+    width: 100%; }
+  .playlist button {
+    margin: 25px 0;
+    order: 1; }
+    .playlist button:active + iframe {
+      transform: translateY(-2%);
+      box-shadow: 0 29px 25px -32px #858585; }
 
 .music-container {
   padding-top: 150px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
-
-@media all and (max-width: 850px) {
-  .music-container {
-    flex-flow: column wrap; } }
+  @media all and (max-width: 850px) {
+    .music-container {
+      flex-flow: column wrap; } }
 
 nav {
   position: fixed;
@@ -76,15 +69,14 @@ nav {
   padding: 50px 25px;
   background: #263238;
   z-index: 2; }
-
-nav input {
-  margin: 0;
-  background: #212121;
-  color: #1ED760;
-  border: none;
-  width: 50%;
-  padding: 2px 5px;
-  box-shadow: 0 0 15px 1px rgba(30, 215, 96, 0.1); }
+  nav input {
+    margin: 0;
+    background: #212121;
+    color: #1ED760;
+    border: none;
+    width: 50%;
+    padding: 2px 5px;
+    box-shadow: 0 0 15px 1px rgba(30, 215, 96, 0.1); }
 
 .add {
   background: #1ED760; }
@@ -102,10 +94,9 @@ nav input {
   transition: 200ms all ease-in-out;
   transform: translateX(100%);
   z-index: 3; }
-
-.favourites > button {
-  display: block;
-  margin: 10px auto; }
+  .favourites > button {
+    display: block;
+    margin: 10px auto; }
 
 .toggled {
   transform: translateX(0); }
