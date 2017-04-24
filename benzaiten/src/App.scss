@@ -95,6 +95,7 @@ nav {
   justify-content: space-around;
   padding: 50px 25px;
   background: #263238;
+  z-index: 2;
 
   input {
     margin: 0;
@@ -124,6 +125,7 @@ nav {
   overflow-y: scroll;
   transition: 200ms all ease-in-out;
   transform: translateX(100%);
+  z-index: 3;
   
 
   > button {

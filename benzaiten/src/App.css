@@ -74,7 +74,8 @@ nav {
   display: flex;
   justify-content: space-around;
   padding: 50px 25px;
-  background: #263238; }
+  background: #263238;
+  z-index: 2; }
 
 nav input {
   margin: 0;
@@ -99,7 +100,8 @@ nav input {
   bottom: 0;
   overflow-y: scroll;
   transition: 200ms all ease-in-out;
-  transform: translateX(100%); }
+  transform: translateX(100%);
+  z-index: 3; }
 
 .favourites > button {
   display: block;
